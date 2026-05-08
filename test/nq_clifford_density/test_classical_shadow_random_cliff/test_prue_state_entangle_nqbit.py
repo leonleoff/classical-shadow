@@ -13,9 +13,6 @@ from shadow_protocol import ShadowProtocol
 
 class Protocol(ShadowProtocol):
 
-    def get_num_qubits(self) -> int:
-        return 2
-
     def get_state_circuit(self) -> QuantumCircuit:
         circuit = QuantumCircuit(2)
         circuit.h(0)

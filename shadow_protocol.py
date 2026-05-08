@@ -4,9 +4,9 @@ from qiskit import QuantumCircuit
 
 
 class ShadowProtocol(ABC):
-    @abstractmethod
+
     def get_num_qubits(self) -> int:
-        raise NotImplementedError("This method should be implemented by subclasses")
+        return len(self.get_state_circuit().qubits)
 
     @abstractmethod
     def get_state_circuit(self) -> QuantumCircuit:

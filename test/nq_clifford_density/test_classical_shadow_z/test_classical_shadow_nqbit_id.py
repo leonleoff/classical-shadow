@@ -22,9 +22,6 @@ class ClassicalShadow(ClassicalShadow_N_CLIFFORD):
 
 class Protocol(ShadowProtocol):
 
-    def get_num_qubits(self) -> int:
-        return 2
-
     def get_state_circuit(self) -> QuantumCircuit:
         qc = QuantumCircuit(2)
         qc.x(0)
