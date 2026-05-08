@@ -89,13 +89,10 @@ class ClassicalShadow_N_CLIFFORD(AbstractClassicalShadow):
         for i in range(n_qubits // 2):
             qc_reverse.swap(i, n_qubits - 1 - i)
         clifford_reverse = Clifford(qc_reverse)
-
-        clifford_a = clifford_a.compose(clifford_reverse)
+        cliff_a_inv = clifford_a.compose(clifford_reverse).adjoint()
 
         clifford_list_list = self.clifford_list_list
         overlaps: list[float] = []
-
-        cliff_a_inv = clifford_a.adjoint()
 
         for cliff_list in clifford_list_list:
             assert len(cliff_list) == 1
